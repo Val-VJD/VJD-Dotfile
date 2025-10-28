@@ -1,0 +1,270 @@
+@import url("colors/pywal.css");
+
+/*
+
+___       __              ______
+__ |     / /_____ _____  ____  /_______ ________
+__ | /| / /_  __ `/_  / / /_  __ \  __ `/_  ___/
+__ |/ |/ / / /_/ /_  /_/ /_  /_/ / /_/ /_  /
+____/|__/  \__,_/ _\__, / /_.___/\__,_/ /_/
+                  /____/
+
+Here is where you can configure Waybar's .jsonc
+*/
+
+* {
+    font-family: Arimo Nerd Font, otf-font-awesome; /* DO NOT CHANGE THIS! */
+    font-size: 12px;
+    min-height: 17px; /* or however tall you want */
+    padding: 0;
+}
+
+window#waybar {
+    border-radius: 0px 0px 10px 10px;
+    background-color: rgba(0, 0, 0, .9);
+    border-bottom: 3px solid @color5;
+    border-left: 3px solid @color5;
+    border-right: 3px solid @color5;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+@keyframes blink {
+    to {
+        color: #000000;
+    }
+}
+
+#workspaces {
+    margin-top: 10px;
+    margin-bottom: 11px;
+    padding-right: 1px;
+    padding-left: 1px;
+    background-color: transparent;
+    border-radius: 12px;
+}
+
+#workspaces button {
+    margin: 1px;
+    border-radius: 5px;
+    border: 2px solid @color5;
+    background-color: #000000;
+    color: #ffffff;
+    padding-right: 3px;
+    padding-left: 3px;
+
+    transition: all 0.25s ease;
+}
+
+#workspaces button:hover {
+    background-color: #181818;
+    color: #ffffff;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    padding-right: 12px;
+    padding-left: 12px;
+    background-color: @color5;
+    color: #000000;
+
+    transition: all 0.25s ease;
+}
+
+#workspaces button.urgent {
+    color: #eb4d4b;
+}
+
+#taskbar {
+    border: 2px solid @color5;
+    margin-top: 10px;
+    margin-bottom: 11px;
+    padding-right: 1px;
+    padding-left: 1px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+#taskbar button {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+#taskbar.empty {
+    border: 0px solid transparent;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#privacy,
+#language,
+#keyboard-state,
+#backlight,
+#battery,
+#privacy-item,
+#mpris{
+    margin-top: 2px;
+    margin-bottom: 3px;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#mpris {
+    color: @color5
+}
+
+#custom-vjdlogo {
+    margin-bottom: 1px;
+    font-family: iconly;
+    background-color: transparent;
+    color: @color5;
+    font-size: 30px;
+    padding: 0 10px;
+}
+
+#custom-powermenu {
+    margin-bottom: 1px;
+    background-color: transparent;
+    color: @color5;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+#custom-swayncmenu {
+    background-color: transparent;
+    color: @color5;
+    font-size: 20px;
+    padding: 0 5px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio-slider {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 0 10px;
+    margin: 0;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 5px;
+    min-width: 80px;
+    border-radius: 2px;
+    background: #101010;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 0px;
+    min-height: 5px;
+    border-radius: 2px;
+    background: @color5
+}
+
+#clock {
+    color: @cursor;
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+#battery.charging, #battery.plugged {
+    color: #3ccf6a;
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#pulseaudio.muted {
+    color: #f53c3c;
+}
+
+#tray {
+    background-color: transparent;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#privacy-item.screenshare {
+    background-color: #cf5700;
+}
+
+#privacy-item.audio-in {
+    background-color: #1ca000;
+}
+
+#privacy-item.audio-out {
+    background-color: #0069d4;
+}
