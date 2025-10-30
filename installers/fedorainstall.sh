@@ -5,8 +5,11 @@ set -e
 # Function to install DNF packages if not already installed
 install_dnf() {
     for pkg in "$@"; do
-        if ! rpm -q $pkg &>/dev/null; then
-            sudo dnf install -y $pkg
+        if ! rpm -q "$pkg" &>/dev/null; then
+            echo "Installing $pkg..."
+            if ! sudo dnf install -y "$pkg"; then
+                echo "Failed to install $pkg, skipping..."
+            fi
         else
             echo "$pkg is already installed"
         fi
