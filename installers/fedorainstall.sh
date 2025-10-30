@@ -63,3 +63,11 @@ install_theme https://github.com/vinceliuice/Tela-icon-theme.git Tela-icon-theme
 # Install pywal via pip
 pip install --user pywal
 pip3 install --user requests
+
+# Make Symlinks
+echo "Making symlinks"
+
+ln -s ~/.cache/wal/colors.css ~/.config/swaync/colors/colors.css
+ln -s ~/.cache/wal/colors.css ~/.config/waybar/colors/colors.css
+ln -s ~/.cache/wal/colors.css ~/.config/nwg-dock-hyprland/colors/colors.css
+ln -s ~/.cache/wal/colors.css ~/.config/wlogout/colors/colors.css
