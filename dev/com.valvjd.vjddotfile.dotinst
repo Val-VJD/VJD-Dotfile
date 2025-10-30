@@ -6,7 +6,7 @@
 	"author": "Val D",
 	"homepage": "",
 	"dependencies": "",
-	"source": "VJD-Dotfile",
+	"source": "https://github.com/Val-VJD/VJD-Dotfile.git",
 	"subfolder": "dotfiles",
 	"setupscript":"setup.sh",
 	"restore":[],
