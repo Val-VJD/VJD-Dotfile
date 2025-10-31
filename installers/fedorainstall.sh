@@ -50,24 +50,22 @@ install_font nerdfonts https://github.com/ryanoasis/nerd-fonts/releases/latest/d
 install_font iconly https://github.com/Val-VJD/VJD-Dotfile/raw/main/iconly.zip
 
 # Install GTK and icon themes
-install_theme() {
-    local repo=$1
-    local theme_dir=$2
-    git clone $repo ~/$theme_dir
-    cd ~/$theme_dir
-    ./install.sh
-    cd ~
-    rm -rf ~/$theme_dir
-}
 
-install_theme https://github.com/vinceliuice/Graphite-gtk-theme.git Graphite-gtk-theme
-install_theme https://github.com/vinceliuice/Tela-icon-theme.git Tela-icon-theme
+git clone https://github.com/vinceliuice/Graphite-gtk-theme.git ~/Graphite-gtk-theme && \
+cd ~/Graphite-gtk-theme && \
+./install.sh
+cd ~ && rm -rf ~/Graphite-gtk-theme
+
+git clone https://github.com/vinceliuice/Tela-icon-theme.git
+cd Tela-icon-theme
+./install.sh black
+cd ~ && rm -rf ~/Tela-icon-theme
 
 # Install pywal via pip
 pip install --user pywal
 pip3 install --user requests
 
-# Make Symlinks
+# Make Folders
 echo "Starting Setup"
 
 mkdir -p ~/.config/waybar/colors
@@ -75,7 +73,10 @@ mkdir -p ~/.config/nwg-dock-hyprland/colors
 mkdir -p ~/.config/wlogout/colors
 mkdir -p ~/.config/swaync/colors
 
-# Generate Wal Accent for First Boot
+# Pre boot setup
+gsettings set org.gnome.desktop.interface gtk-theme 'Graphite-Dark'
+gsettings set org.gnome.desktop.interface icon-theme 'Tela-Black-Dark'
 wal -i ~/.config/wallpaper/valwallpaper.png
+nwg-look -a
 
 echo "Finished Setup, you may proceed with installation"
