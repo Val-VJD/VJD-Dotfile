@@ -16,17 +16,17 @@ cp "$1" "$LINK"
 
 copywalcss() {
     DIR="$1"
-    CSSFILE="$HOME/.cache/wal/colors.css"
+    CSSFILE="$HOME/.cache/wal/colors-waybar.css"
 
-    [ -L "$DIR/colors.css" ] && rm "$DIR/colors.css"
-    mkdir -p "$DIR"          # make sure the directory exists
-    cp "$CSSFILE" "$DIR/colors.css"
+    mkdir -p "$DIR"
+    [ -e "$DIR/pywal.css" ] && rm -f "$DIR/pywal.css"
+    cp "$CSSFILE" "$DIR/pywal.css"
 }
 
-copywalcss "$HOME/.config/waybar/"
-copywalcss "$HOME/.config/swaync/"
-copywalcss "$HOME/.config/nwg-dock-hyprland/"
-copywalcss "$HOME/.config/wlogout/"
+copywalcss "$HOME/.config/waybar/colors"
+copywalcss "$HOME/.config/swaync/colors"
+copywalcss "$HOME/.config/nwg-dock-hyprland/colors"
+copywalcss "$HOME/.config/wlogout/colors"
 
 # Restart UI elements
 
