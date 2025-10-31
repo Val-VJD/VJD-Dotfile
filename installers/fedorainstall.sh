@@ -74,3 +74,8 @@ mkdir -p ~/.config/waybar/colors
 mkdir -p ~/.config/nwg-dock-hyprland/colors
 mkdir -p ~/.config/wlogout/colors
 mkdir -p ~/.config/swaync/colors
+
+# Generate Wal Accent for First Boot
+wal -i ~/.config/wallpaper/valwallpaper.png
+
+echo "Finished Setup, you may proceed with installation"
