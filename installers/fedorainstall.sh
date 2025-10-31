@@ -77,7 +77,6 @@ mkdir -p ~/.config/swaync/colors
 # Pre boot setup
 gsettings set org.gnome.desktop.interface gtk-theme 'Graphite-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Tela-Black-Dark'
-wal -i $SCRIPT_DIR/valwallpaper.png
 nwg-look -a
 
 echo "Finished Setup, you may proceed with installation"
