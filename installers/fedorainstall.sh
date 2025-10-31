@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Function to install DNF packages if not already installed
 install_dnf() {
@@ -76,7 +77,7 @@ mkdir -p ~/.config/swaync/colors
 # Pre boot setup
 gsettings set org.gnome.desktop.interface gtk-theme 'Graphite-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Tela-Black-Dark'
-wal -i ~/.config/wallpaper/valwallpaper.png
+wal -i $SCRIPT_DIR/valwallpaper.png
 nwg-look -a
 
 echo "Finished Setup, you may proceed with installation"
