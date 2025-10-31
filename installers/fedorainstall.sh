@@ -23,9 +23,9 @@ sudo dnf copr enable -y erikreider/SwayNotificationCenter
 # Install tools
 install_dnf kitty waybar python3-pip git hyprland rofi hyprpaper hyprlock \
     fastfetch pipewire pipewire-pulse wireplumber pavucontrol brightnessctl \
-    xorg-x11-server-Xwayland nwg-dock-hyprland nwg-look nwg-drawer gtk-murrine-engine \
+    xorg-x11-server-Xwayland nwg-dock-hyprland nwg-look gtk-murrine-engine \
     nautilus gvfs gvfs-smb gvfs-afc gvfs-mtp ffmpegthumbnailer tumbler waypaper \
-    NetworkManager-tui polkit-kde vlc kwrite htop alsa-utils wlogout \
+    NetworkManager-tui polkit-kde vlc htop alsa-utils wlogout \
     SwayNotificationCenter pipewire-utils playerctl hyprshot bluez-tools blueman
 
 # Add current user to video group for brightnessctl
@@ -68,14 +68,9 @@ pip install --user pywal
 pip3 install --user requests
 
 # Make Symlinks
-echo "Making symlinks"
+echo "Starting Setup"
 
 mkdir -p ~/.config/waybar/colors
 mkdir -p ~/.config/nwg-dock-hyprland/colors
 mkdir -p ~/.config/wlogout/colors
 mkdir -p ~/.config/swaync/colors
-
-ln -s ~/.cache/wal/colors.css ~/.config/swaync/colors/colors.css
-ln -s ~/.cache/wal/colors.css ~/.config/waybar/colors/colors.css
-ln -s ~/.cache/wal/colors.css ~/.config/nwg-dock-hyprland/colors/colors.css
-ln -s ~/.cache/wal/colors.css ~/.config/wlogout/colors/colors.css
