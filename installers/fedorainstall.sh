@@ -66,17 +66,16 @@ cd ~ && rm -rf ~/Tela-icon-theme
 pip install --user pywal
 pip3 install --user requests
 
-# Make Folders
+# Pre boot setup
 echo "Starting Setup"
 
-mkdir -p ~/.config/waybar/colors
-mkdir -p ~/.config/nwg-dock-hyprland/colors
-mkdir -p ~/.config/wlogout/colors
-mkdir -p ~/.config/swaync/colors
+chmod +x ~/.config/hypr/accentcolor.sh
+chmod +x ~/.config/hypr/hyprborders.sh
+chmod +x ~/.config/hypr/hyprborders.sh
 
-# Pre boot setup
 gsettings set org.gnome.desktop.interface gtk-theme 'Graphite-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Tela-Black-Dark'
 nwg-look -a
+wal -i $SCRIPT_DIR/defaultwallpaper.png
 
 echo "Finished Setup, you may proceed with installation"
