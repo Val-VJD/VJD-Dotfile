@@ -22,7 +22,7 @@ sudo dnf copr enable -y solopasha/hyprland
 sudo dnf copr enable -y erikreider/SwayNotificationCenter
 
 # Install tools
-install_dnf kitty waybar python3-pip git hyprland rofi hyprpaper hyprlock \
+install_dnf kitty waybar python3-pip git hyprland rofi hyprpaper hypridle hyprlock \
     fastfetch pipewire pipewire-pulse wireplumber pavucontrol brightnessctl \
     xorg-x11-server-Xwayland nwg-dock-hyprland nwg-look gtk-murrine-engine \
     nautilus gvfs gvfs-smb gvfs-afc gvfs-mtp ffmpegthumbnailer tumbler waypaper \
