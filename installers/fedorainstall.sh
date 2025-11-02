@@ -3,6 +3,10 @@
 set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Install Rust + Cargo
+sudo dnf install rustup
+rustup-init
+
 # Function to install DNF packages if not already installed
 install_dnf() {
     for pkg in "$@"; do
