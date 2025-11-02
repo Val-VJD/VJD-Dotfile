@@ -48,8 +48,8 @@
     },
     "custom/powermenu":{
         "format": "󰐥 ",
-        "tooltip": false,
-        "tooltip-format": "Power Menu (Rofi)",
+        "tooltip": true,
+        "tooltip-format": "Power Menu (Wlogout)",
         "on-click": "wlogout"
     },
     "hyprland/workspaces": {
@@ -65,12 +65,10 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
         "spacing": 10,
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
+        "icons": {
+           "blueman": "bluetooth",
+        }
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -79,10 +77,12 @@
     },
     "cpu": {
         "format": "{usage}% ",
+        "on-click": "kitty htop",
         "tooltip": true
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "on-click": "kitty htop"
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -109,6 +109,7 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
+        "on-click": "kitty nmtui"
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",

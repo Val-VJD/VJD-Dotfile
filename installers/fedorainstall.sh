@@ -69,10 +69,6 @@ pip3 install --user requests
 # Pre boot setup
 echo "Starting Setup"
 
-chmod +x ~/.config/hypr/accentcolor.sh
-chmod +x ~/.config/hypr/hyprborders.sh
-chmod +x ~/.config/hypr/hyprborders.sh
-
 gsettings set org.gnome.desktop.interface gtk-theme 'Graphite-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Tela-Black-Dark'
 nwg-look -a

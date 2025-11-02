@@ -1,9 +1,9 @@
 @import url("colors/pywal.css");
 
 /*
- ## //////////////// ##
- ## //  NWG-DOCK  // ##
- ## //////////////// ##
+ ## ////////////////////// ##
+ ## //  NWG-DOCK  //  ##
+ ## ////////////////////// ##
 
  This is nwg-dock-hyprland, a dock a part of the NWG-Shell family of programs
 */
@@ -11,7 +11,7 @@
 window {
 	background: #000000;
 	border: 3px solid @color5;
-	border-radius: 10px;
+	border-radius: 15px;
 }
 
 #box {

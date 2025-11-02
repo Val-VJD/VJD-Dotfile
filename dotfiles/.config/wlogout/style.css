@@ -39,8 +39,7 @@ button:focus, button:active, button:hover {
 	color: #000000;
 	background-color: @color5;
 	outline-style: none;
-	box-shadow: -7px 7px #ffffff;
-
+	box-shadow: 0px 7px #ffffff;
 	transition: all 0.25s ease;
 }
 
