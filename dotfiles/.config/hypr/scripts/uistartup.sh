@@ -3,7 +3,7 @@
 # Kills existing ui elements, then then starts them again
 
 # Kills programs
-killall  waybar nwg-dock-hyprland nwg-panel 2>/dev/null
+killall waybar nwg-dock-hyprland 2>/dev/null
 
 sleep 0.5
 
@@ -18,5 +18,4 @@ swaync-client -rs
 # Restart programs
 
 waybar &
-nwg-dock-hyprland -x -mb 10 -i 32 &
-nwg-panel &
+nwg-dock-hyprland -x -mb 10 -i 32 & # Put a hashtag (#) before this if you don't want a dock.
