@@ -15,10 +15,10 @@
     "spacing": 4, // Gaps between modules (px)
     "modules-left": [
         "custom/vjdlogo",
-        // "wlr/taskbar", // disabled by default, unstrike this to enable the taskbar module.
         "cpu",
         "memory",
         "battery",
+        "wlr/taskbar", // disabled by default, unstrike this to enable the taskbar module.
         "mpris"
     ],
     "modules-center": [
