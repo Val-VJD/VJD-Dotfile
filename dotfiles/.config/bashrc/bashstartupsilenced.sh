@@ -14,10 +14,3 @@
 # Commands added here will run, with no output in the terminal
 
 # ///////////////////////// #
-
-# ----------- #
-# Restore wal #
-# ----------- #
-
-wal -R
-
