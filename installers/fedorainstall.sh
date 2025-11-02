@@ -26,7 +26,7 @@ install_dnf kitty waybar python3-pip git hyprland rofi hyprpaper hyprlock \
     fastfetch pipewire pipewire-pulse wireplumber pavucontrol brightnessctl \
     xorg-x11-server-Xwayland nwg-dock-hyprland nwg-look gtk-murrine-engine \
     nautilus gvfs gvfs-smb gvfs-afc gvfs-mtp ffmpegthumbnailer tumbler waypaper \
-    NetworkManager-tui polkit-kde vlc htop alsa-utils wlogout \
+    NetworkManager-tui polkit-kde htop alsa-utils wlogout \
     SwayNotificationCenter pipewire-utils playerctl hyprshot bluez-tools blueman
 
 # Add current user to video group for brightnessctl
