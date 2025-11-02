@@ -71,7 +71,6 @@ echo "Starting Setup"
 
 gsettings set org.gnome.desktop.interface gtk-theme 'Graphite-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Tela-Black-Dark'
-nwg-look -a
 wal -i $SCRIPT_DIR/defaultwallpaper.png
 
 echo "Finished Setup, you may proceed with installation"
