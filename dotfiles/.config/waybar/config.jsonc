@@ -18,7 +18,7 @@
         "cpu",
         "memory",
         "battery",
-        "wlr/taskbar", // disabled by default, unstrike this to enable the taskbar module.
+        // "wlr/taskbar", // disabled by default, unstrike this to enable the taskbar module.
         "mpris"
     ],
     "modules-center": [
@@ -38,7 +38,7 @@
         "format": " vjdlogo",
         "tooltip": true,
         "tooltip-format": "Quick Menu (Rofi)",
-        "on-click": "~/.config/rofi/scripts/launcher_t7",
+        "on-click": "/home/val/.config/rofi/scripts/launcher_t7",
     },
     "custom/swayncmenu": {
         "format": "󰂚",
@@ -106,7 +106,7 @@
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format": "{ifname} via {gwaddr} 󱂇",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "on-click": "kitty nmtui"
@@ -150,7 +150,7 @@
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 20,
-        "icon-theme": "Numix-Circle",
+        "icon-theme": "Tela-icons",
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",

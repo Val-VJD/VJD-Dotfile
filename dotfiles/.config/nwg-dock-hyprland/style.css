@@ -1,16 +1,16 @@
-@import url("colors/pywal.css");
+@import url("colors.css");
 
 /*
- ## ////////////////////// ##
- ## //  NWG-DOCK  //  ##
- ## ////////////////////// ##
+ ## //////////////// ##
+ ## //  NWG-DOCK  // ##
+ ## //////////////// ##
 
  This is nwg-dock-hyprland, a dock a part of the NWG-Shell family of programs
 */
 
 window {
-	background: #000000;
-	border: 3px solid @color5;
+	background: rgba(0,0,0,0.9);
+	border: 3px solid @on_primary_container;
 	border-radius: 15px;
 }
 
@@ -21,8 +21,8 @@ window {
 
 #active {
 	/* This is to underline the button representing the currently active window */
-	box-shadow: 0px 1.5px #ffffff;
-	border-color: rgba(255, 255, 255, 1);
+	box-shadow: 0px 2px #ffffff;
+	border-color: @on_primary_container;
 }
 
 button, image {
@@ -33,9 +33,9 @@ button, image {
 }
 
 button {
-	padding: 4px;
-	margin-left: 4px;
-	margin-right: 4px;
+	padding: 1px;
+	margin-left: 3px;
+	margin-right: 3px;
 	color: #eee;
 	font-size: 12px;
 }

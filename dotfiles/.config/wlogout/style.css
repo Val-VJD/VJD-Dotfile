@@ -1,4 +1,4 @@
-@import url("colors/pywal.css");
+@import url("colors.css");
 
 /*
            _                         _
@@ -23,7 +23,7 @@ window {
 button {
     border-radius: 25px;
 	margin: 10px;
-    border-color: @color5;
+    border-color: @on_primary_container;
     color: #FFFFFF;
 	background-color: transparent;
 	border-style: solid;
@@ -37,7 +37,7 @@ button {
 
 button:focus, button:active, button:hover {
 	color: #000000;
-	background-color: @color5;
+	background-color: @on_primary_container;
 	outline-style: none;
 	box-shadow: 0px 7px #ffffff;
 	transition: all 0.25s ease;

@@ -66,15 +66,21 @@ cd Tela-icon-theme
 ./install.sh black
 cd ~ && rm -rf ~/Tela-icon-theme
 
-# Install pywal via pip
-pip install --user pywal
+# Install requests via pip
 pip3 install --user requests
+
+#Install matugen via Cargo
+cargo install matugen
 
 # Pre boot setup
 echo "Starting Setup"
 
 gsettings set org.gnome.desktop.interface gtk-theme 'Graphite-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Tela-Black-Dark'
-wal -i $SCRIPT_DIR/defaultwallpaper.png
+matugen image $SCRIPT_DIR/defaultwallpaper.png
+
+echo "Setting permanent PATH for systemd user session..."
+mkdir -p "$HOME/.config/environment.d"
+echo "PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin:$PATH" > "$HOME/.config/environment.d/path.conf"
 
 echo "Finished Setup, you may proceed with installation"

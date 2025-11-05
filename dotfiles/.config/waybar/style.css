@@ -1,4 +1,4 @@
-@import url("colors/pywal.css");
+@import url("colors.css");
 
 /*
 
@@ -19,12 +19,16 @@ Here is where you can configure Waybar's .jsonc
     padding: 0;
 }
 
+@define-color main @primary_fixed;
+@define-color secondary @primary_container;
+@define-color errorcolor @on_error;
+
 window#waybar {
     border-radius: 0px 0px 15px 15px;
     background-color: rgba(0, 0, 0, .9);
-    border-bottom: 3px solid @color5;
-    border-left: 3px solid @color5;
-    border-right: 3px solid @color5;
+    border-bottom: 3px solid @main;
+    border-left: 3px solid @main;
+    border-right: 3px solid @main;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -38,7 +42,7 @@ window#waybar {
 
 #workspaces {
     margin-top: 10px;
-    margin-bottom: 11px;
+    margin-bottom: 12px;
     padding-right: 1px;
     padding-left: 1px;
     background-color: transparent;
@@ -48,11 +52,11 @@ window#waybar {
 #workspaces button {
     margin: 1px;
     border-radius: 15px;
-    border: 2px solid @color5;
-    background-color: #000000;
-    color: #ffffff;
     padding-right: 1px;
     padding-left: 1px;
+    border: 2px solid @main;
+    background-color: transparent;
+    color: @main;
 
     transition: all 0.25s ease;
 }
@@ -66,24 +70,25 @@ window#waybar {
 #workspaces button.active {
     padding-right: 12px;
     padding-left: 12px;
-    background-color: @color5;
-    color: #000000;
+    border: 1px none #000000;
+    background-color: @main;
+    color: @secondary;
 
     transition: all 0.25s ease;
 }
 
 #workspaces button.urgent {
-    color: #eb4d4b;
+    color: @on_error;
 }
 
 #taskbar {
-    border: 2px solid @color5;
+    border: 2px solid @main;
     margin-top: 10px;
-    margin-bottom: 11px;
+    margin-bottom: 12px;
     padding-right: 1px;
     padding-left: 1px;
     background-color: transparent;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 #taskbar button {
@@ -128,38 +133,39 @@ window#waybar {
 #battery,
 #privacy-item,
 #mpris{
-    margin-top: 2px;
-    margin-bottom: 3px;
+    margin-top: 10px;
+    margin-bottom: 12px;
     background-color: transparent;
     border-radius: 5px;
     padding: 0 10px;
-    color: #ffffff;
+    color: @main;
 }
 
 #mpris {
-    color: @color5
+    color: @main;
 }
 
 #custom-vjdlogo {
-    margin-bottom: 1px;
+    margin-bottom: 4px;
     font-family: iconly;
     background-color: transparent;
-    color: @color5;
+    color: @main;
     font-size: 30px;
     padding: 0 10px;
 }
 
 #custom-powermenu {
-    margin-bottom: 1px;
+    margin-bottom: 4px;
     background-color: transparent;
-    color: @color5;
+    color: @main;
     font-size: 20px;
     padding: 0 5px;
 }
 
 #custom-swayncmenu {
+    margin-bottom: 4px;
     background-color: transparent;
-    color: @color5;
+    color: @main;
     font-size: 20px;
     padding: 0 5px;
 }
@@ -179,8 +185,7 @@ label:focus {
 }
 
 #pulseaudio-slider {
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     padding: 0 10px;
     margin: 0;
 }
@@ -198,18 +203,18 @@ label:focus {
     min-height: 5px;
     min-width: 80px;
     border-radius: 2px;
-    background: #101010;
+    background: @secondary;
 }
 
 #pulseaudio-slider highlight {
     min-width: 0px;
     min-height: 5px;
     border-radius: 2px;
-    background: @color5
+    background: @main;
 }
 
 #clock {
-    color: @cursor;
+    color: @main;
     background-color: transparent;
     border: 2px solid transparent;
 }
@@ -220,7 +225,7 @@ label:focus {
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    color: #f53c3c;
+    color: @errorcolor;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -229,11 +234,12 @@ label:focus {
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: @errorcolor;
+    color: #ffffff;
 }
 
 #pulseaudio.muted {
-    color: #f53c3c;
+    color: @errorcolor;
 }
 
 #tray {
@@ -246,7 +252,7 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: @errorcolor;
 }
 
 #keyboard-state > label {
