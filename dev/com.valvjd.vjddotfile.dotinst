@@ -1,0 +1,14 @@
+{
+	"name": "VJD Dotfile DEV",
+	"id": "com.valvjd.vjddotfile.dev",
+	"description": "A Jet Black dotfile themed around VJD. With accent colors.",
+	"version":"0.1",
+	"author": "Val D",
+	"homepage": "",
+	"dependencies": "",
+	"source": "https://github.com/Val-VJD/VJD-Dotfile.git",
+	"subfolder": "dotfiles",
+	"setupscript":"installers/install.sh",
+	"restore":[],
+	"settings":[]
+}
