@@ -9,6 +9,7 @@ sudo dnf install -y gcc gcc-c++ make pkgconfig openssl-devel
 # Install Rust + Cargo
 sudo dnf install rustup
 rustup-init
+source "$HOME/.cargo/env"
 
 # Function to install DNF packages if not already installed
 install_dnf() {
