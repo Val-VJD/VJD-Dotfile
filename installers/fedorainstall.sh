@@ -3,6 +3,9 @@
 set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Rust/Cargo deps
+sudo dnf install -y gcc gcc-c++ make pkgconfig openssl-devel
+
 # Install Rust + Cargo
 sudo dnf install rustup
 rustup-init
