@@ -38,7 +38,7 @@
         "format": " vjdlogo",
         "tooltip": true,
         "tooltip-format": "Quick Menu (Rofi)",
-        "on-click": "/home/val/.config/rofi/scripts/launcher_t7",
+        "on-click": "nwg-drawer -mb 7 -ml 7 -mr 7 -mt 7",
     },
     "custom/swayncmenu": {
         "format": "󰂚",
