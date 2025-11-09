@@ -17,3 +17,6 @@ cp "$1" "$LINK"
 
 # Generate accent color via Matugen
 "$MATUGEN_PATH" image "$1"
+
+# Set Hyprpanel colors
+hyprpanel setWallpaper "$1"

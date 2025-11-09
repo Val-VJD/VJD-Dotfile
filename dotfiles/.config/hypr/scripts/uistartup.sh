@@ -15,3 +15,4 @@ swaync-client -rs
 
 waybar &
 nwg-dock-hyprland -x -mb 10 -i 30 -c "nwg-drawer -mb 7 -ml 7 -mr 7 -mt 7" & # Put a hashtag (#) before this if you don't want a dock.
+

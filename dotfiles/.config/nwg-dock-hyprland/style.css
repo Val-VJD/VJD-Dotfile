@@ -8,9 +8,13 @@
  This is nwg-dock-hyprland, a dock a part of the NWG-Shell family of programs
 */
 
+@define-color main @primary_fixed;
+@define-color secondary @primary_container;
+@define-color errorcolor @on_error;
+
 window {
 	background: rgba(0,0,0,0.9);
-	border: 3px solid @on_primary_container;
+	border: 3px solid @secondary;
 	border-radius: 15px;
 }
 
@@ -21,8 +25,7 @@ window {
 
 #active {
 	/* This is to underline the button representing the currently active window */
-	box-shadow: 0px 2px #ffffff;
-	border-color: @on_primary_container;
+	box-shadow: 0px 2px @main;
 }
 
 button, image {
