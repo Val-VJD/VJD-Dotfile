@@ -26,9 +26,9 @@ Here is where you can configure Waybar's .jsonc
 window#waybar {
     border-radius: 0px 0px 15px 15px;
     background-color: rgba(0, 0, 0, .9);
-    border-bottom: 3px solid @secondary;
-    border-left: 3px solid @secondary;
-    border-right: 3px solid @secondary;
+    border-bottom: 2px solid @secondary;
+    border-left: 2px solid @secondary;
+    border-right: 2px solid @secondary;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
