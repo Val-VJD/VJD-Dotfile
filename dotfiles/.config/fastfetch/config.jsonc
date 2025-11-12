@@ -49,12 +49,12 @@
             "type": "custom"
         },
         {
-            "key": "║ {#33}󰍛 cpu:    {#keys}",
+            "key": "║ {#33}󰍛 cpu:   {#keys}",
             "type": "cpu",
             "showPeCoreCount": true
         },
         {
-            "key": "║ {#36} memory: {#keys}",
+            "key": "║ {#36} memory:{#keys}",
             "type": "memory"
         },
         {
@@ -66,11 +66,11 @@
             "type": "custom"
         },
         {
-            "key": "║ {#33}󰅐 uptime: {#keys}",
+            "key": "║ {#33}󰅐 uptime:{#keys}",
             "type": "uptime"
         },
         {
-            "key": "║ {#39} colors: {#keys}",
+            "key": "║ {#39} colors:{#keys}",
             "type": "colors",
             "symbol": "circle"
         },
