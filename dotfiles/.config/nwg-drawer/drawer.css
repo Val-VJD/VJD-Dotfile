@@ -1,7 +1,22 @@
+@import url("colors.css");
+
+/*
+ ## ////////////////// ##
+ ## //  NWG-DRAWER  // ##
+ ## ////////////////// ##
+
+ This is nwg-drawer, an app launcher a part of the NWG-Shell family of programs
+*/
+
+@define-color main @primary_fixed;
+@define-color secondary @primary_container;
+@define-color errorcolor @on_error;
+
 window {
     background-color: rgba(0, 0, 0, 0.75);
     color: #eeeeee;
     border-radius: 15px;
+    border: @main solid 2px;
 }
 
 /* search entry */

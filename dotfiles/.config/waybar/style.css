@@ -13,7 +13,7 @@ Here is where you can configure Waybar's .jsonc
 */
 
 * {
-    font-family: Arimo Nerd Font, otf-font-awesome; /* DO NOT CHANGE THIS! */
+    font-family: otf-font-awesome, Arimo Nerd Font; /* DO NOT CHANGE THIS! */
     font-size: 12px;
     min-height: 17px; /* or however tall you want */
     padding: 0;
@@ -81,7 +81,7 @@ window#waybar {
 }
 
 #taskbar {
-    border: 2px solid @main;
+    border: 1px solid @main;
     margin-top: 10px;
     margin-bottom: 12px;
     padding-right: 1px;
@@ -131,6 +131,7 @@ window#waybar {
 #backlight,
 #battery,
 #privacy-item,
+#custom-cava,
 #mpris{
     margin-top: 10px;
     margin-bottom: 12px;
@@ -140,8 +141,13 @@ window#waybar {
     color: @main;
 }
 
-#mpris {
+#custom-swayncmenu,
+#custom-powermenu {
+    margin-bottom: 4px;
+    background-color: transparent;
     color: @main;
+    font-size: 20px;
+    padding: 0 5px;
 }
 
 #custom-vjdlogo {
@@ -153,20 +159,19 @@ window#waybar {
     padding: 0 10px;
 }
 
-#custom-powermenu {
-    margin-bottom: 4px;
+#custom-hardware-wrap {
     background-color: transparent;
     color: @main;
     font-size: 20px;
     padding: 0 5px;
 }
 
-#custom-swayncmenu {
-    margin-bottom: 4px;
-    background-color: transparent;
+#custom-cava {
+    font-family: "Fira Code Nerd Font";
+}
+
+#mpris {
     color: @main;
-    font-size: 20px;
-    padding: 0 5px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
