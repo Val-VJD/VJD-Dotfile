@@ -3,20 +3,29 @@
 set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Check if yay is installed
+if ! command -v yay &>/dev/null; then
+    echo "Error: 'yay' is not installed. Please install yay before running this script."
+    echo "You can install it with:"
+    echo "  sudo pacman -S --needed git base-devel"
+    echo "  git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si"
+    exit 1
+fi
+
 # Rust/Cargo deps
-sudo dnf install -y gcc gcc-c++ make pkgconfig openssl-devel
+sudo pacman -S --needed --noconfirm gcc make pkgconf openssl
 
 # Install Rust + Cargo
-sudo dnf install rustup
-rustup-init
+sudo pacman -S --needed --noconfirm rustup
+rustup-init -y
 source "$HOME/.cargo/env"
 
-# Function to install DNF packages if not already installed
-install_dnf() {
+# Function to install pacman packages if not already installed
+install_pacman() {
     for pkg in "$@"; do
-        if ! rpm -q "$pkg" &>/dev/null; then
+        if ! pacman -Qi "$pkg" &>/dev/null; then
             echo "Installing $pkg..."
-            if ! sudo dnf install -y "$pkg"; then
+            if ! sudo pacman -S --needed --noconfirm "$pkg"; then
                 echo "Failed to install $pkg, skipping..."
             fi
         else
@@ -25,20 +34,18 @@ install_dnf() {
     done
 }
 
-# Enable COPR repos
-sudo dnf copr enable -y solopasha/hyprland
-sudo dnf copr enable -y erikreider/SwayNotificationCenter
-
-# Install tools
-install_dnf kitty waybar python3-pip git hyprland nwg-drawer hyprpaper hyprland-qtutils hypridle hyprlock \
+# Install official repo packages
+install_pacman kitty waybar python-pip git hyprland nwg-drawer hypridle hyprlock \
     fastfetch pipewire pipewire-pulse wireplumber pavucontrol brightnessctl \
-    xorg-x11-server-Xwayland nwg-dock-hyprland nwg-look gtk-murrine-engine \
-    nautilus gvfs gvfs-smb gvfs-afc gvfs-mtp ffmpegthumbnailer tumbler waypaper \
-    NetworkManager-tui mate-polkit htop alsa-utils wlogout \
-    SwayNotificationCenter pipewire-utils playerctl hyprshot bluez-tools blueman
+    xorg-xwayland nwg-look gtk-engine-murrine nautilus gvfs gvfs-smb gvfs-afc gvfs-mtp \
+    ffmpegthumbnailer tumbler networkmanager polkit-gnome htop alsa-utils wlogout \
+    pipewire-utils playerctl bluez bluez-utils blueman curl unzip
 
 # Add current user to video group for brightnessctl
 sudo usermod -aG video $USER
+
+# Install AUR packages via yay
+yay -S --needed --noconfirm hyprpaper hyprland-qtutils waypaper nwg-dock-hyprland swaynotificationcenter hyprshot
 
 # Install Oh My Posh
 curl -s https://ohmyposh.dev/install.sh | bash -s
@@ -58,21 +65,19 @@ install_font nerdfonts https://github.com/ryanoasis/nerd-fonts/releases/latest/d
 install_font nerdfonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Arimo.zip
 install_font iconly https://github.com/Val-VJD/VJD-Dotfile/raw/main/iconly.zip
 
-# Install GTK and icon themes
+# GTK and icon themes
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git ~/Graphite-gtk-theme && \
-cd ~/Graphite-gtk-theme && \
-./install.sh
+cd ~/Graphite-gtk-theme && ./install.sh
 cd ~ && rm -rf ~/Graphite-gtk-theme
 
-git clone https://github.com/vinceliuice/Tela-icon-theme.git
-cd Tela-icon-theme
-./install.sh black
+git clone https://github.com/vinceliuice/Tela-icon-theme.git ~/Tela-icon-theme && \
+cd ~/Tela-icon-theme && ./install.sh black
 cd ~ && rm -rf ~/Tela-icon-theme
 
 # Install requests via pip
-pip3 install --user requests
+pip install --user requests
 
-#Install matugen via Cargo
+# Install matugen via Cargo
 cargo install matugen
 
 # Pre boot setup
@@ -80,7 +85,7 @@ echo "Starting Setup"
 
 gsettings set org.gnome.desktop.interface gtk-theme 'Graphite-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Tela-Black-Dark'
-matugen image $SCRIPT_DIR/defaultwallpaper.png
+matugen image "$SCRIPT_DIR/defaultwallpaper.png"
 
 echo "Setting permanent PATH for systemd user session..."
 mkdir -p "$HOME/.config/environment.d"
