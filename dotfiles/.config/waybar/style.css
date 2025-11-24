@@ -9,13 +9,13 @@ __ |/ |/ / / /_/ /_  /_/ /_  /_/ / /_/ /_  /
 ____/|__/  \__,_/ _\__, / /_.___/\__,_/ /_/
                   /____/
 
-Here is where you can configure Waybar's .jsonc
+Here is where you can configure Waybar's .css (Main Style)
 */
 
 * {
     font-family: otf-font-awesome, Arimo Nerd Font; /* DO NOT CHANGE THIS! */
     font-size: 12px;
-    min-height: 17px; /* or however tall you want */
+    min-height: 10px; /* or however tall you want */
     padding: 0;
 }
 
@@ -24,11 +24,11 @@ Here is where you can configure Waybar's .jsonc
 @define-color errorcolor @on_error;
 
 window#waybar {
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 0px 0px 10px 10px;
     background-color: rgba(0, 0, 0, .9);
-    border-bottom: 2px solid @secondary;
-    border-left: 2px solid @secondary;
-    border-right: 2px solid @secondary;
+    border-bottom: 2px solid @main;
+    border-left: 2px solid @main;
+    border-right: 2px solid @main;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -112,9 +112,6 @@ window#waybar {
 
 #clock,
 #battery,
-#cpu,
-#memory,
-#disk,
 #temperature,
 #backlight,
 #network,
@@ -132,13 +129,24 @@ window#waybar {
 #battery,
 #privacy-item,
 #custom-cava,
-#mpris{
+#mpris {
     margin-top: 10px;
     margin-bottom: 12px;
     background-color: transparent;
     border-radius: 5px;
     padding: 0 10px;
     color: @main;
+}
+
+#cpu,
+#memory,
+#disk {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 0 5px;
+    color: #ffffff;
 }
 
 #custom-swayncmenu,

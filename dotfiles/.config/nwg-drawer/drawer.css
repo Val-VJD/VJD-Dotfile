@@ -13,7 +13,7 @@
 @define-color errorcolor @on_error;
 
 window {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.925);
     color: #eeeeee;
     border-radius: 15px;
     border: @main solid 2px;

@@ -106,12 +106,12 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": " {usage}%",
         "on-click": "kitty htop",
         "tooltip": true
     },
     "memory": {
-        "format": "{}% ",
+        "format": " {}%",
         "on-click": "kitty htop"
     },
     "backlight": {
