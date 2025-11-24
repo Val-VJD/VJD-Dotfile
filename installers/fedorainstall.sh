@@ -56,7 +56,8 @@ install_font() {
 
 install_font nerdfonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
 install_font nerdfonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Arimo.zip
-install_font iconly https://github.com/Val-VJD/VJD-Dotfile/raw/main/iconly.zip
+install_font iconly https://github.com/Val-VJD/VJD-Dotfile/raw/main/fonts/iconly.zip
+install_font googlefonts https://github.com/Val-VJD/VJD-Dotfile/raw/main/fonts/Silkscreen-Regular.zip
 
 # Install GTK and icon themes
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git ~/Graphite-gtk-theme && \
