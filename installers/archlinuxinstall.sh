@@ -14,12 +14,15 @@ fi
 
 sudo pacman -S --needed --noconfirm gcc make pkgconf openssl
 
+# Remove old binaries that might conflict
+sudo rm -f /usr/bin/hyprutils /usr/bin/hypryou-utils /usr/bin/hyprpaper
+
 # Function to install pacman packages if not already installed
 install_pacman() {
     for pkg in "$@"; do
         if ! pacman -Qi "$pkg" &>/dev/null; then
             echo "Installing $pkg..."
-            if ! sudo pacman -S --needed --noconfirm --overwrite "$pkg"; then
+            if ! sudo pacman -S --needed --noconfirm --overwrite '*' "$pkg"; then
                 echo "Failed to install $pkg, skipping..."
             fi
         else
