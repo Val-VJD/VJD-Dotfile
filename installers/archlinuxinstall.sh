@@ -15,10 +15,6 @@ fi
 # Rust/Cargo deps
 sudo pacman -S --needed --noconfirm gcc make pkgconf openssl
 
-# Install Rust + Cargo
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source "$HOME/.cargo/env"
-
 # Function to install pacman packages if not already installed
 install_pacman() {
     for pkg in "$@"; do
