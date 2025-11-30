@@ -12,7 +12,6 @@ if ! command -v yay &>/dev/null; then
     exit 1
 fi
 
-# Rust/Cargo deps
 sudo pacman -S --needed --noconfirm gcc make pkgconf openssl
 
 # Function to install pacman packages if not already installed
