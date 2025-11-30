@@ -19,7 +19,7 @@ install_pacman() {
     for pkg in "$@"; do
         if ! pacman -Qi "$pkg" &>/dev/null; then
             echo "Installing $pkg..."
-            if ! sudo pacman -S --needed --noconfirm "$pkg"; then
+            if ! sudo pacman -S --needed --noconfirm --overwrite "$pkg"; then
                 echo "Failed to install $pkg, skipping..."
             fi
         else
