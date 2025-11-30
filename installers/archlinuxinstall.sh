@@ -38,7 +38,7 @@ install_pacman kitty waybar python-pip git hyprland nwg-drawer hypridle hyprlock
     fastfetch pipewire pipewire-pulse wireplumber pavucontrol brightnessctl \
     xorg-xwayland nwg-look gtk-engine-murrine nautilus gvfs gvfs-smb gvfs-afc gvfs-mtp \
     ffmpegthumbnailer tumbler networkmanager polkit-gnome htop alsa-utils wlogout \
-    pipewire-utils playerctl bluez bluez-utils blueman curl unzip
+    pipewire-utils playerctl bluez bluez-utils blueman curl unzip matugen
 
 # Add current user to video group for brightnessctl
 sudo usermod -aG video $USER
@@ -72,9 +72,6 @@ cd ~ && rm -rf ~/Graphite-gtk-theme
 
 # Install requests via pip
 pip install --user requests
-
-# Install matugen via Cargo
-cargo install matugen
 
 # Pre boot setup
 echo "Starting Setup"
