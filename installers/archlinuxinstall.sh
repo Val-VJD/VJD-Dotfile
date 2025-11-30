@@ -39,7 +39,7 @@ install_pacman kitty waybar python-pip git hyprland nwg-drawer hypridle hyprlock
 sudo usermod -aG video $USER
 
 # Install AUR packages via yay
-yay -S --needed --noconfirm hyprpaper hyprland-qtutils waypaper nwg-dock-hyprland swaynotificationcenter hyprshot
+yay -S --needed --noconfirm --overwrite hyprpaper hyprland-qtutils waypaper nwg-dock-hyprland swaynotificationcenter hyprshot
 
 # Install Oh My Posh
 curl -s https://ohmyposh.dev/install.sh | bash -s
