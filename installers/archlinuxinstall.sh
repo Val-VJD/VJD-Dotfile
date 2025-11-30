@@ -71,10 +71,6 @@ git clone https://github.com/vinceliuice/Graphite-gtk-theme.git ~/Graphite-gtk-t
 cd ~/Graphite-gtk-theme && ./install.sh
 cd ~ && rm -rf ~/Graphite-gtk-theme
 
-git clone https://github.com/vinceliuice/Tela-icon-theme.git ~/Tela-icon-theme && \
-cd ~/Tela-icon-theme && ./install.sh black
-cd ~ && rm -rf ~/Tela-icon-theme
-
 # Install requests via pip
 pip install --user requests
 
@@ -85,7 +81,6 @@ cargo install matugen
 echo "Starting Setup"
 
 gsettings set org.gnome.desktop.interface gtk-theme 'Graphite-Dark'
-gsettings set org.gnome.desktop.interface icon-theme 'Tela-Black-Dark'
 matugen image "$SCRIPT_DIR/defaultwallpaper.png"
 
 echo "Setting permanent PATH for systemd user session..."
