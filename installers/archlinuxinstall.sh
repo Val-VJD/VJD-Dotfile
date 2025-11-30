@@ -17,7 +17,7 @@ sudo pacman -S --needed --noconfirm gcc make pkgconf openssl
 
 # Install Rust + Cargo
 sudo pacman -S --needed --noconfirm rustup
-rustup-init -y
+rustup default stable
 source "$HOME/.cargo/env"
 
 # Function to install pacman packages if not already installed
