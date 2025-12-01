@@ -48,9 +48,6 @@ sleep 2
 if command -v dnf &> /dev/null; then
     # Fedora
     $SCRIPT_DIR/fedorainstall.sh
-elif command -v pacman &> /dev/null; then
-    # Arch
-    $SCRIPT_DIR/archlinuxinstall.sh
 else
-    echo "Warning: Only Fedora and Arch are supported at this time, please install dependencies manually"
+    echo "Warning: Only Fedora and Fedora based systems are supported at this time, please install dependencies manually"
 fi
