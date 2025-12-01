@@ -36,13 +36,14 @@ install_pacman kitty waybar python-pip git hyprland nwg-drawer hypridle hyprlock
     fastfetch pipewire pipewire-pulse wireplumber pavucontrol brightnessctl \
     xorg-xwayland nwg-look gtk-engine-murrine nautilus gvfs gvfs-smb gvfs-afc gvfs-mtp \
     ffmpegthumbnailer tumbler networkmanager polkit-gnome htop alsa-utils wlogout \
-    pipewire-utils playerctl bluez bluez-utils blueman curl unzip matugen
+    pipewire-utils playerctl bluez bluez-utils blueman curl unzip matugen waypaper \
+    swaync nwg-dock-hyprland \
 
 # Add current user to video group for brightnessctl
 sudo usermod -aG video $USER
 
 # Install AUR packages via yay
-yay -S --needed --noconfirm hyprland-qtutils waypaper nwg-dock-hyprland swaynotificationcenter hyprshot
+yay -S --needed --noconfirm hyprshot
 
 # Install Oh My Posh
 curl -s https://ohmyposh.dev/install.sh | bash -s
