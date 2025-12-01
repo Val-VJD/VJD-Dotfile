@@ -70,7 +70,7 @@ cd ~/Graphite-gtk-theme && ./install.sh
 cd ~ && rm -rf ~/Graphite-gtk-theme
 
 # Install requests via pip
-pacman -S python-requests
+sudo pacman -S python-requests
 
 # Pre boot setup
 echo "Starting Setup"
