@@ -3,7 +3,7 @@
 # Kills existing ui elements, then then starts them again
 
 # Kills programs
-killall waybar nwg-dock-hyprland 2>/dev/null
+killall waybar nwg-dock-hyprland cava 2>/dev/null
 
 sleep 0.5
 

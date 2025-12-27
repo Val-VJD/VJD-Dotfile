@@ -35,7 +35,7 @@ install_dnf kitty waybar python3-pip git hyprland nwg-drawer hyprpaper hyprland-
     xorg-x11-server-Xwayland nwg-dock-hyprland nwg-look gtk-murrine-engine \
     nautilus gvfs gvfs-smb gvfs-afc gvfs-mtp ffmpegthumbnailer tumbler waypaper \
     NetworkManager-tui mate-polkit htop alsa-utils wlogout \
-    SwayNotificationCenter pipewire-utils playerctl hyprshot bluez-tools blueman
+    SwayNotificationCenter pipewire-utils playerctl hyprshot bluez-tools blueman cava
 
 # Add current user to video group for brightnessctl
 sudo usermod -aG video $USER
