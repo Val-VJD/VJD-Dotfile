@@ -29,3 +29,18 @@ output_path = '~/.config/swaync/colors.css'
 [templates.nwg-drawer]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/nwg-drawer/colors.css'
+
+# App Themes, Uncomment to use (Warning! Matugen will have issues if apps are not installed)
+
+# Only use if pywalfox is installed!
+
+#[templates.pywalfox]
+#input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+#output_path = '~/.cache/wal/colors.json'
+#post_hook = 'pywalfox update'
+
+# Only use if Discord is installed via FLATPAK alongside Vencord
+
+#[templates.vesktop]
+#input_path = '~/.config/matugen/templates/midnight-discord.css'
+#output_path = '~/.var/app/com.discordapp.Discord/config/Vencord/themes/midnight-discord.css'

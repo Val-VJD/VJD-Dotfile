@@ -1,7 +1,6 @@
 @import url("colors.css");
 
 /*
-
 ___       __              ______
 __ |     / /_____ _____  ____  /_______ ________
 __ | /| / /_  __ `/_  / / /_  __ \  __ `/_  ___/
@@ -52,11 +51,9 @@ window#waybar {
 #workspaces button {
     margin: 1px;
     border-radius: 15px;
-    padding-right: 1px;
-    padding-left: 1px;
     background-color: transparent;
-    color: @secondary;
-
+    color: @main;
+    border: 2px solid @main;
     transition: all 0.25s ease;
 }
 
@@ -125,28 +122,38 @@ window#waybar {
 #privacy,
 #language,
 #keyboard-state,
-#backlight,
 #battery,
 #privacy-item,
 #custom-cava,
-#mpris {
+#bluetooth,
+#mpris,
+#window {
     margin-top: 10px;
     margin-bottom: 12px;
     background-color: transparent;
     border-radius: 5px;
-    padding: 0 10px;
+    padding: 0 8px;
     color: @main;
+}
+
+#clock,
+#bluetooth,
+#backlight {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    color: @secondary;
+    background-color: @main;
 }
 
 #cpu,
 #memory,
 #disk {
+    border-radius: 6px;
+    padding: 0 5px;
+    margin: 1px;
     margin-top: 10px;
     margin-bottom: 12px;
-    background-color: transparent;
-    border-radius: 5px;
-    padding: 0 5px;
-    color: #ffffff;
 }
 
 #custom-swayncmenu,
@@ -160,11 +167,18 @@ window#waybar {
 
 #custom-vjdlogo {
     margin-bottom: 4px;
+    margin-left: 8px;
     font-family: iconly;
     background-color: transparent;
     color: @main;
     font-size: 30px;
     padding: 0 10px;
+}
+
+#custom-seperator {
+    color: @main;
+    margin-top: 10px;
+    margin-bottom: 12px;
 }
 
 #custom-hardware-wrap {

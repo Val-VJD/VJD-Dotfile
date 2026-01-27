@@ -34,7 +34,7 @@ install_dnf kitty waybar python3-pip git hyprland nwg-drawer hyprpaper hyprland-
     fastfetch pipewire pipewire-pulse wireplumber pavucontrol brightnessctl \
     xorg-x11-server-Xwayland nwg-dock-hyprland nwg-look gtk-murrine-engine \
     nautilus gvfs gvfs-smb gvfs-afc gvfs-mtp ffmpegthumbnailer tumbler waypaper \
-    NetworkManager-tui mate-polkit htop alsa-utils wlogout \
+    NetworkManager-tui mate-polkit htop alsa-utils wlogout emoji-picker \
     SwayNotificationCenter pipewire-utils playerctl hyprshot bluez-tools blueman cava
 
 # Add current user to video group for brightnessctl
@@ -58,6 +58,14 @@ install_font nerdfonts https://github.com/ryanoasis/nerd-fonts/releases/latest/d
 install_font nerdfonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Arimo.zip
 install_font iconly https://github.com/Val-VJD/VJD-Dotfile/raw/main/fonts/iconly.zip
 install_font googlefonts https://github.com/Val-VJD/VJD-Dotfile/raw/main/fonts/Silkscreen-Regular.zip
+
+# Install Segoe UI Only (No Zip)
+sudo bash -c 'mkdir -p /usr/share/fonts/segoe-ui && \
+TMPDIR=$(mktemp -d) && \
+curl -fLo "$TMPDIR/segoeuil.ttf" https://github.com/bamboobyyte/segoe-ui-fonts/raw/refs/heads/master/font/segoeuil.ttf && \
+mv "$TMPDIR/segoeuil.ttf" /usr/share/fonts/segoe-ui/ && \
+fc-cache -fv && \
+rm -rf "$TMPDIR"'
 
 # Install GTK and icon themes
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git ~/Graphite-gtk-theme && \

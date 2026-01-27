@@ -21,9 +21,11 @@
         "custom/cava"
     ],
     "modules-center": [
+        "hyprland/window",
         "clock"
     ],
     "modules-right": [
+        "bluetooth",
         "group/sound",
         "group/hardware",
         "network",
@@ -46,7 +48,10 @@
         "modules": [
             "custom/hardware-wrap",
 		    "cpu",
-		    "memory"
+            "custom/seperator",
+		    "memory",
+            "custom/seperator",
+            "disk"
 	    ]
     },
     "group/sound": {
@@ -61,10 +66,10 @@
 	    ]
     },
     "custom/vjdlogo": {
-        "format": " vjdlogo",
+        "format": "vjdlogo",
         "tooltip": true,
-        "tooltip-format": "Quick Menu (Rofi)",
-        "on-click": "nwg-drawer -mb 75 -ml 200 -mr 200 -mt 75"
+        "tooltip-format": "Quick Menu (NWG-Drawer)",
+        "on-click": "nwg-drawer -mb 150 -ml 350 -mr 350 -mt 150"
     },
     "custom/swayncmenu": {
         "format": "󰂚",
@@ -83,6 +88,10 @@
             "*": 5 // 5 workspaces by default on every monitor
         }
     },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 50
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -98,12 +107,22 @@
     },
     "custom/cava": {
         "format": "{}",
-        "exec": "~/.config/hypr/scripts/cava.sh"
+        "exec": "~/.config/hypr/scripts/cava.sh",
+        "tooltip": false
+    },
+    "bluetooth": {
+    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+    "format": " {status}",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections} connected",
+    "tooltip-format": "{controller_alias}", 
+    "tooltip-format-connected": "{controller_alias}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}"
     },
     "clock": {
         // "timezone": "America/New_York",
+        "format": "{:%b %d, %Y - %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
         "format": " {usage}%",
@@ -112,7 +131,15 @@
     },
     "memory": {
         "format": " {}%",
-        "on-click": "kitty htop"
+        "on-click": "kitty htop",
+        "tooltip": true
+    },
+    "disk": {
+        "interval": 60,
+        "format": " {percentage_used}%",
+        "on-click": "kitty htop",
+        "format-tooltip": "{used} used out of {total} on {path} ({percentage_used}%)",
+        "path": "/"
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -180,12 +207,14 @@
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 20,
-        "icon-theme": "Tela-icons",
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
         "ignore-list": [
             "Alacritty"
         ]
+    },
+    "custom/seperator": {
+        "format": "|"
     }
 }

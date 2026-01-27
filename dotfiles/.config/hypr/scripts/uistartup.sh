@@ -14,5 +14,5 @@ swaync-client -rs
 # Restart programs
 
 waybar &
-nwg-dock-hyprland -x -mb 4 -mt -4 -i 24 -c "nwg-drawer -mb 75 -ml 200 -mr 200 -mt 75" & # Put a hashtag (#) before this if you don't want a dock.
+nwg-dock-hyprland -x -f -d -p "left" -hd 60 -mb 10 -mt 10 -ml 10 -i 24 -c "nwg-drawer -mb 150 -ml 350 -mr 350 -mt 150" & # Put a hashtag (#) before this if you don't want a dock.
 
