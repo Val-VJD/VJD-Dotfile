@@ -37,7 +37,7 @@ install_dnf ffmpeg-free kitty waybar python3-pip git hyprland nwg-drawer hyprpap
     NetworkManager-tui mate-polkit htop alsa-utils wlogout emoji-picker \
     SwayNotificationCenter pipewire-utils playerctl hyprshot bluez-tools blueman cava
 
-# Fedora 43 Only
+# Fedora 43, 44 and Rawhide Only
 FEDORA_VERSION=$(rpm -E %fedora)
 if [ "$FEDORA_VERSION" -ge 43 ]; then
     sudo dnf copr enable -y acidburnmonkey/hyprland
@@ -78,7 +78,7 @@ rm -rf "$TMPDIR"'
 # Install GTK and icon themes
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git ~/Graphite-gtk-theme && \
 cd ~/Graphite-gtk-theme && \
-./install.sh
+./install.sh --tweaks normal black
 cd ~ && rm -rf ~/Graphite-gtk-theme
 
 # Install requests via pip
