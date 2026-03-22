@@ -10,7 +10,7 @@ if [ -z "$MATUGEN_PATH" ]; then
 fi
 
 # Generate accent color via Matugen
-"$MATUGEN_PATH" image "$1"
+"$MATUGEN_PATH" image "$1" --source-color-index 0
 
 # Copy the current wallpaper
 LINK="$HOME/.config/waypaper/current.png"
