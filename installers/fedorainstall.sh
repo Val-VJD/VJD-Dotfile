@@ -37,14 +37,6 @@ install_dnf ffmpeg-free kitty waybar python3-pip git hyprland nwg-drawer hyprpap
     NetworkManager-tui mate-polkit htop alsa-utils wlogout emoji-picker \
     SwayNotificationCenter pipewire-utils playerctl hyprshot bluez-tools blueman cava
 
-# Fedora 43, 44 and Rawhide Only
-FEDORA_VERSION=$(rpm -E %fedora)
-if [ "$FEDORA_VERSION" -ge 43 ]; then
-    sudo dnf copr enable -y acidburnmonkey/hyprland
-    # Install just hyprland-guiutils from that COPR
-    sudo dnf install -y --repo=acidburnmonkey-hyprland hyprland-guiutils
-fi
-
 # Add current user to video group for brightnessctl
 sudo usermod -aG video $USER
 
