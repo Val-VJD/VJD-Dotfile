@@ -41,8 +41,8 @@ install_dnf ffmpeg-free kitty waybar python3-pip git hyprland nwg-drawer hyprpap
 FEDORA_VERSION=$(rpm -E %fedora)
 if [ "$FEDORA_VERSION" -ge 43 ]; then
     sudo dnf copr enable -y acidburnmonkey/hyprland
-    # Install just hyprland-guiutils from that COPR
-    sudo dnf install -y --repo=acidburnmonkey-hyprland hyprland-guiutils
+    # Install just hyprland-guiutils from acidburnmonkey COPR
+    sudo dnf install -y hyprland-guiutils
 fi
 
 # Add current user to video group for brightnessctl
