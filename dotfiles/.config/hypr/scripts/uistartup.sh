@@ -18,5 +18,5 @@ waybar &
 # Tip, remove -d from nwg-dock-hyprland to make the dock static,
 # Add -d back to make it autohide
 
-nwg-dock-hyprland -x -d -f -p "left" -hd 60 -mb 10 -mt 10 -ml 10 -i 24 -c "nwg-drawer -mb 150 -ml 350 -mr 350 -mt 150" & # Put a hashtag (#) before this if you don't want a dock.
+nwg-dock-hyprland -x -f -p "left" -hd 60 -mb 10 -mt 10 -ml 10 -i 24 -c "nwg-drawer -mb 150 -ml 350 -mr 350 -mt 150" & # Put a hashtag (#) before this if you don't want a dock.
 
