@@ -42,6 +42,7 @@ FEDORA_VERSION=$(rpm -E %fedora)
 if [ "$FEDORA_VERSION" -ge 43 ]; then
     sudo dnf copr enable -y acidburnmonkey/hyprland
     # Install just hyprland-guiutils from acidburnmonkey COPR
+    sudo dnf install -y hyprutils
     sudo dnf install -y hyprland-guiutils
 fi
 
