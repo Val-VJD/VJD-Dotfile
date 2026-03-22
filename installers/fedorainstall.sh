@@ -30,12 +30,20 @@ sudo dnf copr enable -y solopasha/hyprland
 sudo dnf copr enable -y erikreider/SwayNotificationCenter
 
 # Install tools
-install_dnf kitty waybar python3-pip git hyprland nwg-drawer hyprpaper hyprland-qtutils hypridle hyprlock \
-    fastfetch pipewire pipewire-pulse wireplumber pavucontrol brightnessctl \
+install_dnf ffmpeg-free kitty waybar python3-pip git hyprland nwg-drawer hyprpaper hyprland-qtutils hypridle hyprlock \
+    hyprland-guiutils fastfetch pipewire pipewire-pulse wireplumber pavucontrol brightnessctl \
     xorg-x11-server-Xwayland nwg-dock-hyprland nwg-look gtk-murrine-engine \
     nautilus gvfs gvfs-smb gvfs-afc gvfs-mtp ffmpegthumbnailer tumbler waypaper \
     NetworkManager-tui mate-polkit htop alsa-utils wlogout emoji-picker \
     SwayNotificationCenter pipewire-utils playerctl hyprshot bluez-tools blueman cava
+
+# Fedora 43, 44 and Rawhide Only
+FEDORA_VERSION=$(rpm -E %fedora)
+if [ "$FEDORA_VERSION" -ge 43 ]; then
+    sudo dnf copr enable -y acidburnmonkey/hyprland
+    # Install just hyprland-guiutils from that COPR
+    sudo dnf install -y --repo=acidburnmonkey-hyprland hyprland-guiutils
+fi
 
 # Add current user to video group for brightnessctl
 sudo usermod -aG video $USER
@@ -70,7 +78,7 @@ rm -rf "$TMPDIR"'
 # Install GTK and icon themes
 git clone https://github.com/vinceliuice/Graphite-gtk-theme.git ~/Graphite-gtk-theme && \
 cd ~/Graphite-gtk-theme && \
-./install.sh
+./install.sh --tweaks normal black
 cd ~ && rm -rf ~/Graphite-gtk-theme
 
 # Install requests via pip

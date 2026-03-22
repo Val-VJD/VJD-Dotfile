@@ -39,6 +39,12 @@ output_path = '~/.config/nwg-drawer/colors.css'
 #output_path = '~/.cache/wal/colors.json'
 #post_hook = 'pywalfox update'
 
+# Only use if Vesktop is installed! (Vesktop is a lighter discord client with Vencord)
+
+#[templates.vesktop]
+#input_path = '~/.config/matugen/templates/midnight-discord.css'
+#output_path = '~/.config/vesktop/themes/midnight-discord.css'
+
 # Only use if Discord is installed via FLATPAK alongside Vencord
 
 #[templates.vesktop]
